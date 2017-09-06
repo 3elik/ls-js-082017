@@ -111,6 +111,7 @@ function deleteTextNodes(where) {
     for (let i = 0; i < el.length; i++) {
         if (el[i].nodeType == Node.TEXT_NODE) {
             where.removeChild(el[i]);
+            i--;
         }
     }
 }
