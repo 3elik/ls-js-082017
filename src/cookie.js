@@ -49,8 +49,8 @@ addButton.addEventListener('click', () => {
 
     document.cookie = name + '=' + value + ';';
 
-    addValueInput.value = '';
-    addNameInput.value = '';
+    // addValueInput.value = '';
+    // addNameInput.value = '';
 
     reloadTable();
 });
@@ -70,6 +70,10 @@ function reloadTable() {
     listTable.innerHTML = '';
 
     for (let i = 0; i < filteredCookies.length; i++) {
+        if (!filteredCookies[i].length) {
+            continue;
+        }
+
         let tmp = filteredCookies[i].split('=');
         let row = document.createElement('tr');
         let cellName = document.createElement('td');
@@ -93,7 +97,7 @@ function reloadTable() {
     }
 }
 
-document.addEventListener('load', reloadTable);
+document.addEventListener('DOMContentLoaded', reloadTable);
 
 homeworkContainer.addEventListener('click', function (e) {
     if (!e.target.classList.contains('remove')) {
@@ -106,11 +110,3 @@ homeworkContainer.addEventListener('click', function (e) {
 
     reloadTable();
 });
-//
-// function getCookie(name) {
-//     let matches = document.cookie.match(new RegExp(
-//       "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-//     ));
-//
-//     return matches ? decodeURIComponent(matches[1]) : undefined;
-// }
