@@ -3,7 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <title>{{htmlWebpackPlugin.options.title}}</title>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,700" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
 </head>
 <body>
+  <div class="wrapper">
+  </div>
+  <div class="form">
+    <div class="form__header header">
+      <div class="header__title">Выберите друзей</div>
+      <div class="header__close" style="display: none;">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="form__search search">
+      <div class="search__part search__part--left">
+        <div class="search__group">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <input type="text" class="search__name js-search-all-friends" data-target="allFriends" id="js-search-all-friends" name="all-name" placeholder="Начните вводить имя друга">
+        </div>
+      </div>
+      <div class="search__part search__part--right">
+        <div class="search__group">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <input type="text" class="search__name js-search-selected-friends" data-target="selectedFriends" id="js-search-selected-friends" name="selected-name" placeholder="Начните вводить имя друга">
+        </div>
+      </div>
+    </div>
+    <div class="form__body body">
+      <div class="body__part body__part--left">
+        <h3 class="body__title">Ваши друзья</h3>
+        <div class="friends">
+          <ul class="friends__list js-all-friends" data-list="allFriends" id="js-all-friends">
+          </ul>
+        </div>
+      </div>
+      <div class="body__part body__part--right">
+        <h3 class="body__title">Друзья в списке</h3>
+        <div class="friends">
+          <ul class="friends__list js-selected-friends" data-list="selectedFriends" id="js-selected-friends">
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="form__footer footer">
+      <button class="btn__save js-save" id="js-save">Сохранить</button>
+    </div>
+  </div>
+
 </body>
 </html>
