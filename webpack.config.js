@@ -7,9 +7,16 @@ let path = require('path');
 
 loaders.push({
     test: /\.css$/,
-    loader: ExtractTextPlugin.extract({
-        fallbackLoader: 'style-loader',
-        loader: 'css-loader'
+    use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: 'css-loader'
+    })
+});
+loaders.push({
+    test: /\.less$/,
+    use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: ['css-loader', 'less-loader']
     })
 });
 
@@ -30,9 +37,9 @@ module.exports = {
                 drop_debugger: false
             }
         }),
-        new ExtractTextPlugin('styles.css'),
+        new ExtractTextPlugin('styles[hash].css'),
         new HtmlPlugin({
-            title: 'Loft School sample project',
+            title: 'Карта отзывов',
             template: 'index.hbs'
         }),
         new CleanWebpackPlugin(['dist'])

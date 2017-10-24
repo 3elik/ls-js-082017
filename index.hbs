@@ -3,7 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>{{htmlWebpackPlugin.options.title}}</title>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,700" rel="stylesheet">
+  <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
 </head>
 <body>
+  <div class="yandex-map" id="yandex-map"></div>
+  <div class="form" id="form">
+    <div class="form__header">
+      <i class="fa fa-map-marker form__marker" aria-hidden="true"></i>
+      <div class="form__address" id="form__address"></div>
+      <div class="form__close" id="form__close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="form__body">
+      <div class="form__comments" id="form__comments"></div>
+      <div class="form__title">Ваш отзыв</div>
+      <div class="form__error" id="form__error"></div>
+      <div class="form__input-wrapper">
+        <input type="text" class="form__name form__input" id="form__name" placeholder="Ваше имя"/>
+      </div>
+      <div class="form__input-wrapper">
+        <input type="text" class="form__place form__input" id="form__place" placeholder="Укажите место">
+      </div>
+      <textarea name="comment" id="form__comment" cols="30" rows="10" class="form__comment"  placeholder="Поделитесь впечатлениями"></textarea>
+    </div>
+    <div class="form__footer">
+      <button class="form__add" id="form__add">Добавить</button>
+    </div>
+  </div>
+
 </body>
 </html>
