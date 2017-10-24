@@ -39,7 +39,7 @@ module.exports = {
         }),
         new ExtractTextPlugin('styles[hash].css'),
         new HtmlPlugin({
-            title: 'Другофильтр',
+            title: 'Карта отзывов',
             template: 'index.hbs'
         }),
         new CleanWebpackPlugin(['dist'])
